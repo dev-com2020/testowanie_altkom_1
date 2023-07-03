@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
@@ -18,6 +20,7 @@ except NoSuchElementException:
 
 search_box.click()
 search_box.send_keys("selenium")
+time.sleep(2)
 search_box.send_keys(Keys.ENTER)
 driver.find_element(By.CSS_SELECTOR, ".eKjLze .LC20lb").click()
 
