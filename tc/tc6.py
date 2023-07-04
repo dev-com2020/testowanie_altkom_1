@@ -7,6 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestGoogleSearch:
+    """
+    This class contains tests that search for different strings on Google.
+    """
 
     @staticmethod
     def google_example_that_searches_for(search_string):
@@ -15,8 +18,9 @@ class TestGoogleSearch:
         try:
             element = driver.find_element(By.ID, "L2AGLb")
             element.click()
-        except NoSuchElementException:
+        except (NoSuchElementException, ElemenetNotVisibleException):
             pass
+
         search_box = driver.find_element(By.NAME, "q")
         search_box.send_keys(search_string)
         print(f"Searching for {search_string}")
@@ -26,11 +30,23 @@ class TestGoogleSearch:
         driver.quit()
 
     def test_google_cheese_example(self):
+        """
+        This test searches for cheese on Google.
+        :return:
+        """
         self.google_example_that_searches_for("cheese")
 
     def test_google_milk_example(self):
+        """
+        This test searches for milk on Google.
+        :return:
+        """
         self.google_example_that_searches_for("milk")
 
     def test_google_selenium_example(self):
+        """
+        This test searches for selenium on Google.
+        :return:
+        """
         self.google_example_that_searches_for("selenium")
 
