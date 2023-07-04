@@ -42,5 +42,8 @@ class TestGoogleSearch:
     def test_login_correct(self):
         self.login_main_func("kwp@tlen.pl", "xE3BKaw8yUxZmSU")
 
-    def test_login_incorrect(self):
+    def test_login_incorrect_with_bad_password(self):
         self.login_main_func("kwp@tlen.pl", "xE3BKafdSU")
+
+    def test_login_incorrect_with_bad_mail(self):
+        self.login_main_func("kwp@tn.pl", "xE3BKaw8yUxZmSU")
