@@ -23,7 +23,8 @@ search_box.send_keys("selenium")
 time.sleep(2)
 search_box.send_keys(Keys.ENTER)
 driver.find_element(By.CSS_SELECTOR, ".eKjLze .LC20lb").click()
-
+time.sleep(1)
+driver.save_screenshot("screenshot.png")
 assert 'Selenium' in driver.page_source
 
 driver.quit()
