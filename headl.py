@@ -40,4 +40,4 @@ def get_webdriver(browser_name, headless=False):
     return driver
 
 
-get_webdriver('chrome', headless=False)
+get_webdriver('edge', headless=False)
